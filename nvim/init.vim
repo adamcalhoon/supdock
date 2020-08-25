@@ -97,7 +97,7 @@ lua << EOF
     end
 
     require'nvim_lsp'.clangd.setup{
-        cmd = {'clangd', '--background-index'};
+        cmd = {'clangd-9', '--background-index'};
 
         gen_cmdline_args = function(fname)
             local args = {}
@@ -122,6 +122,7 @@ lua << EOF
 EOF
 
 " add handy aliases for intellisense tools
+inoremap <tab> <c-x><c-o>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<cr>
@@ -139,3 +140,8 @@ endfunction
 nmap <leader>c :call AddCopyright()<cr>
 nmap <leader>f :ClangFormat<cr>
 nmap <leader>w :%s/\s\+$//e<CR>
+
+augroup TerminalStuff
+    au!
+    autocmd TermOpen * setlocal nonumber nospell
+augroup END
