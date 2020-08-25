@@ -34,14 +34,14 @@ $ catkin config --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
 
 | Command | Description |
 |:-------:|-------------|
-| <leader>c | inserts copyright text at the top of the active file |
-| <leader>f | clang formats the active buffer |
-| <leader>w | strips trailing whitespace from the active buffer |
+| \<leader\>c | inserts copyright text at the top of the active file |
+| \<leader\>f | clang formats the active buffer |
+| \<leader\>w | strips trailing whitespace from the active buffer |
 | gd | goto declaration for the word under the cursor |
-| <c-]> | goto definition for the word under the cursor |
+| \<c-]\> | goto definition for the word under the cursor |
 | K | goto hover for the word under the cursor |
 | gD | goto implementation for the word under the cursor |
-| <c-k> | goto signature_help for the word under the cursor |
+| \<c-k\> | goto signature_help for the word under the cursor |
 | 1gD | goto type_definition for the word under the cursor |
 | gr | goto references for the word under the cursor |
 | g0 | goto document_symbol for the word under the cursor |
@@ -51,4 +51,4 @@ $ catkin config --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
 
 | Command | Description |
 |---------|-------------|
-| <tab> | intellisense completion |
+| \<tab\> | intellisense completion |
