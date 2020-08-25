@@ -33,7 +33,7 @@ $ catkin config --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
 ## Normal Mode Key Bindings
 
 | Command | Description |
-|:-------:|-------------|
+|:-------:|:------------|
 | \<leader\>c | inserts copyright text at the top of the active file |
 | \<leader\>f | clang formats the active buffer |
 | \<leader\>w | strips trailing whitespace from the active buffer |
@@ -50,5 +50,5 @@ $ catkin config --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
 ## Insert Mode Key Bindings
 
 | Command | Description |
-|---------|-------------|
+|:-------:|:------------|
 | \<tab\> | intellisense completion |
