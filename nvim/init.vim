@@ -11,6 +11,7 @@ endif
 
 call plug#begin('~/.vim/plugins')
 Plug 'altercation/vim-colors-solarized'
+Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'acalhoon/nvim-lsp', { 'branch': 'develop' } " lsp required tweak
@@ -122,7 +123,7 @@ lua << EOF
 EOF
 
 " add handy aliases for intellisense tools
-inoremap <tab> <c-x><c-o>
+let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<cr>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<cr>
