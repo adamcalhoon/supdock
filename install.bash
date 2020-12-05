@@ -43,5 +43,13 @@ set omnifunc=v:lua.vim.lsp.omnifunc
 EOF
 popd > /dev/null
 
+# Update tmux.config to support colors correctly
+cat >> ~/.tmux.config << EOF
+set -g default-terminal "screen-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+set -g default-command bash
+set -sg escape-time 20
+EOF
+
 # Install valgrind and valgrind viewer
 sudo apt-get --yes install valgrind kcachegrind

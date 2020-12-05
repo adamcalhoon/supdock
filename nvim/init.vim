@@ -10,7 +10,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugins')
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -36,9 +36,11 @@ set mouse=n
 syntax on
 
 " theme
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+set t_8f=[38;2;%lu;%lu;%lum   " set foreground color
+set t_8b=[48;2;%lu;%lu;%lum   " set background color
+set t_Co=256
+set termguicolors               " enable GUI colors for the terminal to get truecolo
+colorscheme solarized8          " set scheme
 
 " highlight matching braces
 set showmatch
