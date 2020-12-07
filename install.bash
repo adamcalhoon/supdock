@@ -43,8 +43,21 @@ set omnifunc=v:lua.vim.lsp.omnifunc
 EOF
 popd > /dev/null
 
-# Update tmux.config to support colors correctly
-cat >> ~/.tmux.config << EOF
+# Update TERM for colors
+cat >> ~/.bashrc << EOF
+export TERM=screen-256color
+EOF
+
+# Update TERM colors for tmux
+mkdir -p terminfo
+pushd . > /dev/null
+curl -LO http://invisible-island.net/datafiles/current/terminfo.src.gz
+gunzip terminfo.src.gz
+tic -x terminfo.src
+popd > /dev/null
+
+# Update tmux.conf to support colors correctly
+cat >> ~/.tmux.conf << EOF
 set -g default-terminal "screen-256color"
 set -ga terminal-overrides ",*256col*:Tc"
 set -g default-command bash
