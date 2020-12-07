@@ -14,7 +14,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rrethy/vim-illuminate'
 Plug 'tpope/vim-fugitive'
@@ -102,7 +102,7 @@ lua << EOF
         return build_path
     end
 
-    require'nvim_lsp'.clangd.setup{
+    require'lspconfig'.clangd.setup{
         cmd = {'clangd-9', '--background-index'};
 
         on_new_config = function(new_config)
@@ -122,7 +122,7 @@ lua << EOF
         end;
 
         root_dir = function(fname)
-            return require'nvim_lsp/util'.root_pattern(XML_FILE)(fname)
+            return require'lspconfig/util'.root_pattern(XML_FILE)(fname)
         end
     }
 EOF
