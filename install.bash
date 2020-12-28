@@ -48,6 +48,9 @@ cat >> ~/.bashrc << EOF
 export TERM=screen-256color
 EOF
 
+# Install tmux
+sudo apt-get --yes install tmux
+
 # Update TERM colors for tmux
 mkdir -p terminfo
 pushd . > /dev/null
