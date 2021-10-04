@@ -14,6 +14,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/vim-clang-format'
 Plug 'rrethy/vim-illuminate'
@@ -126,6 +127,13 @@ lua << EOF
         end
     }
 EOF
+
+"" lua << EOF
+""     require'lspconfig'.pyright.setup{}
+"" EOF
+
+" neovim insists on making Y behave like y$
+unmap Y
 
 " add handy aliases for intellisense tools
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
