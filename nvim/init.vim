@@ -104,7 +104,7 @@ lua << EOF
     end
 
     require'lspconfig'.clangd.setup{
-        cmd = {'clangd-9', '--background-index'};
+        cmd = {'clangd-11', '--background-index'};
 
         on_new_config = function(new_config)
             local root_dir = new_config.root_dir(vim.api.nvim_buf_get_name(0),
@@ -133,7 +133,10 @@ EOF
 "" EOF
 
 " neovim insists on making Y behave like y$
-unmap Y
+" unmap Y
+
+" Esc exits terminal mode
+:tnoremap <Esc> <C-\><C-n>
 
 " add handy aliases for intellisense tools
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
@@ -146,6 +149,7 @@ nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<cr>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<cr>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<cr>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<cr>
+nnoremap <silent> <space>rn <cmd>lua vim.lsp.buf.rename()<cr>
 
 " file tidying commands
 function! AddCopyright()
