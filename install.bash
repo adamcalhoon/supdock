@@ -69,3 +69,14 @@ EOF
 
 # Install valgrind and valgrind viewer
 sudo apt-get --yes install valgrind kcachegrind
+
+# Install fish
+sudo apt-get --yes install fish
+
+# Install zoxide
+curl -sS https://webinstall.dev/zoxide | bash
+eval "$(zoxide init bash)"
+
+# Install fzf for zoxide
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
