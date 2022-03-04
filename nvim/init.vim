@@ -133,7 +133,7 @@ EOF
 "" EOF
 
 " neovim insists on making Y behave like y$
-" unmap Y
+unmap Y
 
 " Esc exits terminal mode
 :tnoremap <Esc> <C-\><C-n>
